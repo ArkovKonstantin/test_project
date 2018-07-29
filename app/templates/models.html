@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{ models }}
+    <ul>
+        {% for model in models %}
+        <li><a href="{% url 'object_url' model %}">{{ model }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from app.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'get$', ModelView.as_view(), name='model_get'),
+    # url(r'obj/(?P<model>\w+)', ObjectView.as_view(), name='object_url'),
+
 ]
