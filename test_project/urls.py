@@ -20,6 +20,7 @@ from app.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'get$', ModelView.as_view(), name='model_get'),
-    # url(r'obj/(?P<model>\w+)', ObjectView.as_view(), name='object_url'),
+    url(r'get/(?P<model>\w+)/$', ObjectView.as_view(), name='object_url'),
+    url(r'get/(?P<model>\w+)/(?P<pk>[0-9]+)/$', ObjectDetailView.as_view(), name='detail_url'),
 
 ]

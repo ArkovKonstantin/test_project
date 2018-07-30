@@ -5,7 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-    <strong>123</strong>
+{{ model }}
+   <ul>
+       {% for obj in object_list %}
+       <li><a href="{% url 'detail_url' model obj.id %}">{{ obj.name }}</a></li>
+       {% endfor %}
+   </ul>
 
 </body>
 </html>

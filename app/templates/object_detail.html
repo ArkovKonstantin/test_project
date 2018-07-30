@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="display:inline-block">
+    <table>
+    {% for f  in qs %}
+    <tr>
+        <td>{{ f }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+<div style="display:inline-block">
+<table>
+    {% for f  in qs.values %}
+    <tr>
+        <td>{{ f }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+
+
+
+</body>
+</html>
