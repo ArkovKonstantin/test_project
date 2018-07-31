@@ -8,7 +8,7 @@
     {{ models }}
     <ul>
         {% for model in models %}
-        <li><a href="{% url 'object_url' model %}">{{ model }}</a></li>
+        <li><a href="{% url 'myapp:object_url' model %}">{{ model }}</a></li>
         {% endfor %}
     </ul>
 

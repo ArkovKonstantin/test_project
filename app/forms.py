@@ -1,7 +1,14 @@
 from django import forms
 
-# class ObjectCreateForm(forms.ModelForm):
-#     class Meta:
-#         model =
-#
-#         fields = ['text',]
+from app.models import Point, PointType
+
+
+class PointCreateForm(forms.ModelForm):
+    class Meta:
+        model = Point
+        exclude = ['']
+
+class PointTypeCreateForm(forms.ModelForm):
+    class Meta:
+        model = PointType
+        exclude = ['']

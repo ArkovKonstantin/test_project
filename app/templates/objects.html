@@ -8,7 +8,7 @@
 {{ model }}
    <ul>
        {% for obj in object_list %}
-       <li><a href="{% url 'detail_url' model obj.id %}">{{ obj.name }}</a></li>
+       <li><a href="{% url 'myapp:detail_url' model obj.id %}">{{ obj.name }}</a></li>
        {% endfor %}
    </ul>
 

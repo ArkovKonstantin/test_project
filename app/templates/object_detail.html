@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+
 <div style="display:inline-block">
     <table>
     {% for f  in qs %}
@@ -24,9 +25,15 @@
 </table>
 </div>
 
-
-
-
+{% if model == "point" %}
+    <a href="{% url 'myapp:create_point' %}">Create new {{ model }}</a>
+    <a href="{% url 'myapp:update_point' qs.id %}">Update {{ model }}</a>
+    <a href="{% url 'myapp:delete_point' qs.id %}">Delete {{ model }}</a>
+{% elif model == "pointtype" %}
+    <a href="{% url 'myapp:create_pointtype' %}">Create new {{ model }}</a>
+    <a href="{% url 'myapp:update_pointtype' qs.id %}">Update {{ model }}</a>
+    <a href="{% url 'myapp:delete_pointtype' qs.id %}">Delete {{ model }}</a>
+{% endif %}
 
 </body>
 </html>
