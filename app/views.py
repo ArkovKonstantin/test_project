@@ -11,7 +11,7 @@ from app.forms import PointCreateForm, PointTypeCreateForm
 from app.models import Point, PointType
 from app.serializers import PointSerializer
 
-
+# Api для получения данных по точкам
 class PointList(APIView):
     def get(self, request):
         points = Point.objects.all()
@@ -35,7 +35,6 @@ class ObjectView(ListView):
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        # models = apps.all_models['app']  # returns dict with all models you defined
         data['model'] = self.kwargs['model']
         return data
 
