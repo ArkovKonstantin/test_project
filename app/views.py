@@ -4,10 +4,19 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse, reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.apps import apps
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from app.forms import PointCreateForm, PointTypeCreateForm
 from app.models import Point, PointType
+from app.serializers import PointSerializer
 
+
+class PointList(APIView):
+    def get(self, request):
+        points = Point.objects.all()
+        serializer = PointSerializer(points, many=True)
+        return Response(serializer.data)
 
 # Вывод списка моделей
 class ModelView(TemplateView):

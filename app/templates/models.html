@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-    {{ models }}
     <ul>
         {% for model in models %}
         <li><a href="{% url 'myapp:object_url' model %}">{{ model }}</a></li>
