@@ -5,7 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
+{% load i18n %}
+<div>
+{% trans "Object description" %}
+</div>
 <div style="display:inline-block">
     <table>
     {% for f  in qs %}
@@ -24,16 +27,16 @@
     {% endfor %}
 </table>
 </div>
-
+<div>
 {% if model == "point" %}
-    <a href="{% url 'myapp:create_point' %}">Create new {{ model }}</a>
-    <a href="{% url 'myapp:update_point' qs.id %}">Update {{ model }}</a>
-    <a href="{% url 'myapp:delete_point' qs.id %}">Delete {{ model }}</a>
+    <a href="{% url 'myapp:create_point' %}">{% trans "Create" %}</a>
+    <a href="{% url 'myapp:update_point' qs.id %}">{% trans "Update" %}</a>
+    <a href="{% url 'myapp:delete_point' qs.id %}">{% trans "Delete" %}</a>
 {% elif model == "pointtype" %}
-    <a href="{% url 'myapp:create_pointtype' %}">Create new {{ model }}</a>
-    <a href="{% url 'myapp:update_pointtype' qs.id %}">Update {{ model }}</a>
-    <a href="{% url 'myapp:delete_pointtype' qs.id %}">Delete {{ model }}</a>
+    <a href="{% url 'myapp:create_pointtype' %}">{% trans "Create" %}</a>
+    <a href="{% url 'myapp:update_pointtype' qs.id %}">{% trans "Update" %}</a>
+    <a href="{% url 'myapp:delete_pointtype' qs.id %}">{% trans "Delete" %}</a>
 {% endif %}
-
+</div>
 </body>
 </html>

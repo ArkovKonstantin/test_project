@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 
 import app
@@ -21,7 +22,13 @@ from app.views import *
 
 
 
+# i18n_urls = (
+#     url(r'^i18n/', include('django.conf.urls.i18n'), name='set_language'),
+# )
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('app.urls', namespace='myapp')),
 ]
+
+# urlpatterns.extend(i18n_patterns(*i18n_urls, prefix_default_language=False))
